@@ -14,13 +14,8 @@ int TestPlayerCoordColumn = 0;
 string Contents = "empty";
 
 
-
 Console.WriteLine("Do you want to play the bomb game? - Y for yes N for no"); // asks the user if they want to play 
 WannaPlay = Console.ReadLine();  // creates a variable to store their answer to the question about if they want to play 
-
-
-
-
 
 if (WannaPlay == "Y") 
 {
@@ -46,9 +41,9 @@ if (WannaPlay == "Y")
             Console.WriteLine("that is an invalid amount of bombs");
         }
     }
-    for (int i = 1; i <= ChosenNumberOfBombs; i = i + 1) // this for loop changes (number of  bombs the user has chose) random indexes within the array to "b" to signify that there is a bomb
+    for (int i = 1; i <= ChosenNumberOfBombs; i = i + 1) // this for loop changes (number of  bombs the user has chose) random indexes within the array to "bomb" to signify that there is a bomb
     {
-        Random rnd = new Random(); // got this of stack overflow GIVE LINK HERE
+        Random rnd = new Random(); // got this of stack overflow https://stackoverflow.com/questions/33080397/how-to-pick-a-random-place-from-a-2d-array 
         int row = rnd.Next(0, 10);  // makes a random number between 0 and 10 for the row of the bombs
         int column = rnd.Next(0, 10); // makes a random number between 0 and 10 for the column of the bombs
 
@@ -116,9 +111,6 @@ if (WannaPlay == "Y")
 
             }
 
-
-
-
         }
         // check bomb
 
@@ -132,10 +124,7 @@ if (WannaPlay == "Y")
             Console.WriteLine("You have made it to the finish - Congratulations"); // if the point in the array that the player is in is finish it will say that they have won and stop the main while loop which will stop the program
             play = false;
         }
-        ValidMove = false; // this resest svalid move so the loop starts again
-
-
-
+        ValidMove = false; // this reset valid move so the loop starts again
     }
 
 }
