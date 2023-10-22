@@ -1,6 +1,4 @@
-﻿/using System.Globalization;
-using System.Linq.Expressions;
-
+﻿
 bool play = false;
 bool ValidNumOfBombs = false;
 bool ValidMove = false;
@@ -94,7 +92,7 @@ if (WannaPlay == "Y")
             }
             else
             {
-                Console.WriteLine("invalid move");
+                Console.WriteLine("invalid move"); // if the player types in anything over than what is used to change direction then it says invalid move
             }
 
             try
