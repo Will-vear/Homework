@@ -63,9 +63,10 @@ if (WannaPlay == "Y")
         }
 
     }
+    // 
     while (play == true)
     {
-        while (ValidMove == false)
+        while (ValidMove == false) // 
         {
 
             Console.WriteLine("your current coordinates are [{0},{1}]", PlayerCoordRow, PlayerCoordColumn); // displays the user's current co-ordinates so that they kno where they are 
@@ -92,15 +93,14 @@ if (WannaPlay == "Y")
             }
             else
             {
-                Console.WriteLine("invalid move"); // if the player types in anything over than what is used to change direction then it says invalid move
+                Console.WriteLine("invalid option"); // if the player types in anything over than what is used to change direction then it says invalid move
             }
 
             try
             {
                 Contents = grid[TestPlayerCoordRow, TestPlayerCoordColumn];
-                Console.WriteLine("hello world");
-                // PlayerCoordRow = TestPlayerCoordRow; // debugging
-                // PlayerCoordColumn = TestPlayerCoordColumn; // debugging
+                PlayerCoordRow = TestPlayerCoordRow;
+                PlayerCoordColumn = TestPlayerCoordColumn;
                 ValidMove = true;
             }
 
@@ -110,8 +110,8 @@ if (WannaPlay == "Y")
                 TestPlayerCoordRow = PlayerCoordRow;
                 TestPlayerCoordColumn = PlayerCoordColumn;
 
-                Console.WriteLine(TestPlayerCoordRow);
-                Console.WriteLine(TestPlayerCoordColumn);
+                // Console.WriteLine(TestPlayerCoordRow); // debugging
+                // Console.WriteLine(TestPlayerCoordColumn);  // debugging
 
 
             }
