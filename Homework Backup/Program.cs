@@ -22,7 +22,7 @@ WannaPlay = Console.ReadLine();  // creates a variable to store their answer to 
 
 
 
-if (WannaPlay == "Y")
+if (WannaPlay == "Y") 
 {
     play = true;
 
@@ -32,7 +32,7 @@ if (WannaPlay == "Y")
     grid[1, 1] = "start";
     grid[9, 9] = "finish";
 
-    while (ValidNumOfBombs == false)
+    while (ValidNumOfBombs == false) // this is the first while loop and is used to check that player has  put in a reasonable amount of bombs within the game so it is playable but also not really easy
     {
         Console.WriteLine("How many bombs would you like in the game - between 5-20"); // asks them how many bombs they want in the game
         ChosenNumberOfBombs = int.Parse(Console.ReadLine()); // creates a variable to store how many bombs the user wants in their game
@@ -63,10 +63,10 @@ if (WannaPlay == "Y")
         }
 
     }
-    // 
-    while (play == true)
+  
+    while (play == true)  // this is the main while loop that keeps the game playing and t stop when they die or finish
     {
-        while (ValidMove == false) // 
+        while (ValidMove == false) // this is the third while loop and is used to make sure that the player is entering valid moves so that the game actually plays, if it is an invalid move the loop repeats to ask them again
         {
 
             Console.WriteLine("your current coordinates are [{0},{1}]", PlayerCoordRow, PlayerCoordColumn); // displays the user's current co-ordinates so that they kno where they are 
@@ -96,7 +96,7 @@ if (WannaPlay == "Y")
                 Console.WriteLine("invalid option"); // if the player types in anything over than what is used to change direction then it says invalid move
             }
 
-            try
+            try // this will try to do an action in this case the action is trying to access a point in the array
             {
                 Contents = grid[TestPlayerCoordRow, TestPlayerCoordColumn];
                 PlayerCoordRow = TestPlayerCoordRow;
@@ -104,7 +104,7 @@ if (WannaPlay == "Y")
                 ValidMove = true;
             }
 
-            catch
+            catch // if it is unabe to access a point in the array instead of displaying an error message and messing up the code the catch function will stop it from happening and do whatever code is put in there
             {
                 Console.WriteLine("invalid move");
                 TestPlayerCoordRow = PlayerCoordRow;
@@ -122,14 +122,14 @@ if (WannaPlay == "Y")
         }
         // check bomb
 
-        if (Contents == "bomb")
+        if (Contents == "bomb") // if the point in the array that the player is in is a bomb it will say that they have died and stop the main while loop which will stop the program
         {
             Console.WriteLine("There was a bomb you have died");
             play = false;
         }
-        if (Contents == "finish")
+        if (Contents == "finish") // check finsih
         {
-            Console.WriteLine("You have made it to the finish - Congratulations");
+            Console.WriteLine("You have made it to the finish - Congratulations"); // if the point in the array that the player is in is finish it will say that they have won and stop the main while loop which will stop the program
             play = false;
         }
         ValidMove = false; // this resest svalid move so the loop starts again
@@ -141,5 +141,5 @@ if (WannaPlay == "Y")
 }
 else
 {
-    Console.WriteLine("sorry you dont want to play");
+    Console.WriteLine("sorry you dont want to play"); // incase the player says no to the question of if they want to play the game this code will just say that they are sorry that they dont want to play the game and nothing else happens
 }
